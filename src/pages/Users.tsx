@@ -1,7 +1,6 @@
 import API from '@app/utils/API';
 import { ContentHeader } from '@components';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 interface IUser {
     _id: string;
@@ -16,7 +15,6 @@ interface IUser {
 
 const Users = () => {
     const [users, setUsers] = useState<IUser[]>([]);
-    const navigate = useNavigate();
 
     async function getUsers() {
         const response = await API.get('user');
